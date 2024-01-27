@@ -116,7 +116,7 @@ public class RoadGenerator : MonoBehaviour
         if (_obstacleCounter > _nextObstaclePosition)
         {
             RandomSpawnObstacle(center, centerPosition);
-            _nextObstaclePosition = generateRandomNextObstaclePosition(_nextKebabPosition)
+            _nextObstaclePosition = generateRandomNextObstaclePosition(_nextKebabPosition);
             _obstacleCounter = 0;
         }
         else
@@ -127,7 +127,7 @@ public class RoadGenerator : MonoBehaviour
         if (_kebabCounter > _nextKebabPosition)
         {
             RandomSpawnKebab(center, centerPosition);
-            _nextKebabPosition = generateRandomNextKebabPosition(_nextObstaclePosition)
+            _nextKebabPosition = generateRandomNextKebabPosition(_nextObstaclePosition);
             _kebabCounter = 0;
         }
         else
