@@ -40,8 +40,7 @@ public class RoadGenerator : MonoBehaviour
             CreateSegment();
         } while (_furthestDistance < _horizonDistance);
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         float move = Time.deltaTime * _speed;
@@ -58,6 +57,23 @@ public class RoadGenerator : MonoBehaviour
             }
             _roadPivot.position = new Vector3(0, 0, -_currentDistance);
         }
+
+        _speed = Mathf.Lerp(_speed, 0, Time.deltaTime * 2f);
+    }
+
+    public void AddSpeed(float speed)
+    {
+        _speed += speed;
+    }
+
+    public float MinX()
+    {
+        return -0.5f * _roadWidth;
+    }    
+    
+    public float MaxX()
+    {
+        return 0.5f * _roadWidth;
     }
 
     private void CreateSegment()
