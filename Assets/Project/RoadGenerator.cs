@@ -13,6 +13,25 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField]
     private GameObject[] _obstacles;
     [SerializeField]
+    private float _minDistanceBetweenObstacles;
+    [SerializeField]
+    private float _maxDistanceBetweenObstacles;
+    [SerializeField]
+    private float _nextObstaclePosition;
+    
+
+    [SerializeField]
+    private float _kebabHeight = 1f;
+    [SerializeField]
+    private GameObject[] _kebabs;
+    [SerializeField]
+    private float _minDistanceBetweenKebabs;
+    [SerializeField]
+    private float _maxDistanceBetweenKebabs;
+    [SerializeField]
+    private float _nextKebabPosition;
+    
+    [SerializeField]
     private float _segmentLength;
     [SerializeField]
     private float _horizonDistance = 120;
@@ -80,13 +99,48 @@ public class RoadGenerator : MonoBehaviour
     {
         GameObject center = Instantiate(_center);
         center.transform.SetParent(_roadPivot.transform);
+        
         Vector3 centerPosition = new Vector3(0, 0, (_segments.Count * _segmentLength) - _currentDistance);
         _furthestDistance = centerPosition.z;
         center.transform.position = centerPosition;
+        
+        RandomSpawnObstacle(center, centerPosition);
+
+        // if (timeToSpawnObstacle())
+        // {
+        //     RandomSpawnObstacle(center, centerPosition);
+        // }
+        //
+        // if (timeToSpawnKebab())
+        // {
+        //     RandomSpawnKebab(center, centerPosition);
+        // }
+        
+        _segments.Enqueue(center);
+    }
+    
+    // private bool timeToSpawnObstacle()
+    // {
+    //     
+    // }
+    //
+    // private bool timeToSpawnKebab()
+    // {
+    //     
+    // }
+
+    private void RandomSpawnKebab(GameObject center, Vector3 centerPosition)
+    {
+        GameObject kebab = Instantiate(_kebabs[Random.Range(0, _kebabs.Length)]);
+        kebab.transform.SetParent(center.transform);
+        kebab.transform.position = centerPosition + RandomSegmentPosition();
+    }
+
+    private void RandomSpawnObstacle(GameObject center, Vector3 centerPosition)
+    {
         GameObject obstacle = Instantiate(_obstacles[Random.Range(0, _obstacles.Length)]);
         obstacle.transform.SetParent( center.transform);
         obstacle.transform.position = centerPosition + RandomSegmentPosition();
-        _segments.Enqueue(center);
     }
 
     private Vector3 RandomSegmentPosition()

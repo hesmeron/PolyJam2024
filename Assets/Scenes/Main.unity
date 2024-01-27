@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731707, g: 0.13414726, b: 0.12107857, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -519,6 +519,9 @@ MonoBehaviour:
   _obstacleHeight: 1
   _obstacles:
   - {fileID: 4650663384356968748, guid: 52d98f11bebe018c28bd76199e9206fa, type: 3}
+  _kebabHeight: 1
+  _kebabs:
+  - {fileID: 6307666245395616220, guid: ad2f22e7eef1ee757b233388e51aa5e4, type: 3}
   _segmentLength: 4
   _horizonDistance: 120
   _roadWidth: 11
