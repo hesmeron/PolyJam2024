@@ -13,9 +13,9 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField]
     private GameObject[] _obstacles;
     [SerializeField]
-    private float _minDistanceBetweenObstacles;
+    private float _minDistanceBetweenObstacles = 4f;
     [SerializeField]
-    private float _maxDistanceBetweenObstacles;
+    private float _maxDistanceBetweenObstacles = 10f;
     [SerializeField]
     private float _nextObstaclePosition;
     
@@ -25,9 +25,9 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField]
     private GameObject[] _kebabs;
     [SerializeField]
-    private float _minDistanceBetweenKebabs;
+    private float _minDistanceBetweenKebabs = 6f;
     [SerializeField]
-    private float _maxDistanceBetweenKebabs;
+    private float _maxDistanceBetweenKebabs = 15f;
     [SerializeField]
     private float _nextKebabPosition;
     
