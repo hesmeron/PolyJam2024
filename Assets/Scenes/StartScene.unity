@@ -361,15 +361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4063005
+      value: -0.339
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.26925945
+      value: -0.343
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8180001
+      value: 3.756837
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1317229434, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
@@ -484,6 +484,8 @@ GameObject:
   - component: {fileID: 1255644049}
   - component: {fileID: 1255644048}
   - component: {fileID: 1255644050}
+  - component: {fileID: 1255644051}
+  - component: {fileID: 1255644052}
   m_Layer: 0
   m_Name: HerringHelmet
   m_TagString: Untagged
@@ -584,6 +586,140 @@ MonoBehaviour:
   m_GameObject: {fileID: 1255644045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e50aba52ccd75575894faa8cca27763, type: 3}
+  m_Script: {fileID: 11500000, guid: 1496334d4db00b938bcfbed3247d5179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1255644051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255644045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbc07bd4981bf24ea86ad10e209173c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemType: 0
+  _handle: {fileID: 0}
+  _broadcastSenderBehaviour: {fileID: 0}
+  _grabBehaviour: {fileID: 0}
+  _startGrabControlScheme:
+    _possibleControllerTypes: 
+    _railroadedData:
+      _scheme:
+        _possibleControllerTypes: 
+        _railroadedData:
+          _scheme:
+            _possibleControllerTypes: 
+            _railroadedData:
+              _scheme:
+                _possibleControllerTypes: 
+                _railroadedData:
+                  _scheme:
+                    _possibleControllerTypes: 
+                    _railroadedData:
+                      _scheme:
+                        _rotationAxis: {x: 0, y: 0, z: 0}
+                      _boundaryOrigin: {x: 0, y: 0, z: 0}
+                      _boundaryEnd: {x: 0, y: 0, z: 0}
+                    _rotateData:
+                      _axisOrigin: {x: 0, y: 0, z: 0}
+                      _axisNormal: {x: 0, y: 0, z: 0}
+                      _maxTurn: 0
+                    _rotationAxis: {x: 0, y: 0, z: 0}
+                  _boundaryOrigin: {x: 0, y: 0, z: 0}
+                  _boundaryEnd: {x: 0, y: 0, z: 0}
+                _rotateData:
+                  _axisOrigin: {x: 0, y: 0, z: 0}
+                  _axisNormal: {x: 0, y: 0, z: 0}
+                  _maxTurn: 0
+                _rotationAxis: {x: 0, y: 0, z: 0}
+              _boundaryOrigin: {x: 0, y: 0, z: 0}
+              _boundaryEnd: {x: 0, y: 0, z: 0}
+            _rotateData:
+              _axisOrigin: {x: 0, y: 0, z: 0}
+              _axisNormal: {x: 0, y: 0, z: 0}
+              _maxTurn: 0
+            _rotationAxis: {x: 0, y: 0, z: 0}
+          _boundaryOrigin: {x: 0, y: 0, z: 0}
+          _boundaryEnd: {x: 0, y: 0, z: 0}
+        _rotateData:
+          _axisOrigin: {x: 0, y: 0, z: 0}
+          _axisNormal: {x: 0, y: 0, z: 0}
+          _maxTurn: 0
+        _rotationAxis: {x: 0, y: 0, z: 0}
+      _boundaryOrigin: {x: 0, y: 0, z: 0}
+      _boundaryEnd: {x: 0, y: 0, z: 0}
+    _rotateData:
+      _axisOrigin: {x: 0, y: 0, z: 0}
+      _axisNormal: {x: 0, y: 0, z: 0}
+      _maxTurn: 0
+    _rotationAxis: {x: 0, y: 0, z: 0}
+--- !u!114 &1255644052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255644045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f77c4f4d7384c841a2e694b55858e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1255644047}
+  _handle: {fileID: 1255644049}
+  _grabControlScheme:
+    _possibleControllerTypes: 00000000
+    _railroadedData:
+      _scheme:
+        _possibleControllerTypes: 
+        _railroadedData:
+          _scheme:
+            _possibleControllerTypes: 
+            _railroadedData:
+              _scheme:
+                _possibleControllerTypes: 
+                _railroadedData:
+                  _scheme:
+                    _possibleControllerTypes: 
+                    _railroadedData:
+                      _scheme:
+                        _rotationAxis: {x: 0, y: 0, z: 0}
+                      _boundaryOrigin: {x: 0, y: 0, z: 0}
+                      _boundaryEnd: {x: 0, y: 0, z: 0}
+                    _rotateData:
+                      _axisOrigin: {x: 0, y: 0, z: 0}
+                      _axisNormal: {x: 0, y: 0, z: 0}
+                      _maxTurn: 0
+                    _rotationAxis: {x: 0, y: 0, z: 0}
+                  _boundaryOrigin: {x: 0, y: 0, z: 0}
+                  _boundaryEnd: {x: 0, y: 0, z: 0}
+                _rotateData:
+                  _axisOrigin: {x: 0, y: 0, z: 0}
+                  _axisNormal: {x: 0, y: 0, z: 0}
+                  _maxTurn: 0
+                _rotationAxis: {x: 0, y: 0, z: 0}
+              _boundaryOrigin: {x: 0, y: 0, z: 0}
+              _boundaryEnd: {x: 0, y: 0, z: 0}
+            _rotateData:
+              _axisOrigin: {x: 0, y: 0, z: 0}
+              _axisNormal: {x: 0, y: 0, z: 0}
+              _maxTurn: 0
+            _rotationAxis: {x: 0, y: 0, z: 0}
+          _boundaryOrigin: {x: 0, y: 0, z: 0}
+          _boundaryEnd: {x: 0, y: 0, z: 0}
+        _rotateData:
+          _axisOrigin: {x: 0, y: 0, z: 0}
+          _axisNormal: {x: 0, y: 0, z: 0}
+          _maxTurn: 0
+        _rotationAxis: {x: 0, y: 0, z: 0}
+      _boundaryOrigin: {x: 0, y: 0, z: 0}
+      _boundaryEnd: {x: 0, y: 0, z: 0}
+    _rotateData:
+      _axisOrigin: {x: 0, y: 0, z: 0}
+      _axisNormal: {x: 0, y: 0, z: 0}
+      _maxTurn: 0
+    _rotationAxis: {x: 0, y: 0, z: 0}
