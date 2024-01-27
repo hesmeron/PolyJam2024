@@ -361,15 +361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08400917
+      value: -1.4063005
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37453997
+      value: -0.26925945
       objectReference: {fileID: 0}
     - target: {fileID: 8220594448941773210, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00000023841858
+      value: 0.8180001
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1317229434, guid: 8f303ffa9bda7b64695b143e9e700e32, type: 3}
@@ -481,6 +481,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1255644047}
   - component: {fileID: 1255644046}
+  - component: {fileID: 1255644049}
+  - component: {fileID: 1255644048}
+  - component: {fileID: 1255644050}
   m_Layer: 0
   m_Name: HerringHelmet
   m_TagString: Untagged
@@ -527,39 +530,60 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1466457529}
   - {fileID: 369164454}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1466457528
-GameObject:
+--- !u!114 &1255644048
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1466457529}
-  m_Layer: 0
-  m_Name: Attach
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1466457529
-Transform:
+  m_GameObject: {fileID: 1255644045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c55b1d468bde941afa5d666c31f52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0
+  _bounds:
+    m_Center: {x: 0, y: 0.1, z: 0}
+    m_Extent: {x: 0.25, y: 0.5, z: 0.3}
+  _maxDistance: 0
+  _zMultiplier: 0
+  _boundType: 0
+--- !u!114 &1255644049
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466457528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10554761, y: -0.88348496, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1255644047}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1255644045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1193a5f53e493f448455ae63192f431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionMask: 0
+  _onEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  _interactionBounds: {fileID: 1255644048}
+  _onExited:
+    m_PersistentCalls:
+      m_Calls: []
+  _releaseInteractorsWhenTheyLeaveHandleArea: 0
+  _interactorsInside: []
+--- !u!114 &1255644050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255644045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e50aba52ccd75575894faa8cca27763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
