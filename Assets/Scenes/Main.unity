@@ -519,9 +519,17 @@ MonoBehaviour:
   _obstacleHeight: 1
   _obstacles:
   - {fileID: 4650663384356968748, guid: 52d98f11bebe018c28bd76199e9206fa, type: 3}
+  _minDistanceBetweenObstacles: 4
+  _maxDistanceBetweenObstacles: 10
+  _nextObstaclePosition: 0
+  _obstacleCounter: 0
   _kebabHeight: 1
   _kebabs:
   - {fileID: 6307666245395616220, guid: ad2f22e7eef1ee757b233388e51aa5e4, type: 3}
+  _minDistanceBetweenKebabs: 6
+  _maxDistanceBetweenKebabs: 15
+  _nextKebabPosition: 0
+  _minDistanceBetweenObstacleAndKebab: 2
   _segmentLength: 4
   _horizonDistance: 120
   _roadWidth: 11

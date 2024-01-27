@@ -18,8 +18,9 @@ public class RoadGenerator : MonoBehaviour
     private float _maxDistanceBetweenObstacles = 10f;
     [SerializeField]
     private float _nextObstaclePosition;
+    [SerializeField]
+    private float _obstacleCounter = 0;
     
-
     [SerializeField]
     private float _kebabHeight = 1f;
     [SerializeField]
@@ -30,6 +31,11 @@ public class RoadGenerator : MonoBehaviour
     private float _maxDistanceBetweenKebabs = 15f;
     [SerializeField]
     private float _nextKebabPosition;
+    [SerializeField]
+    private float _kebabCounter = 0;
+    
+    [SerializeField]
+    private float _minDistanceBetweenObstacleAndKebab = 2;
     
     [SerializeField]
     private float _segmentLength;
@@ -54,6 +60,9 @@ public class RoadGenerator : MonoBehaviour
 
     void Start()
     {
+        _nextObstaclePosition = generateRandomNextObstaclePosition(0f);
+        _nextKebabPosition = generateRandomNextKebabPosition(_nextObstaclePosition);
+        
         do
         {
             CreateSegment();
@@ -103,31 +112,53 @@ public class RoadGenerator : MonoBehaviour
         Vector3 centerPosition = new Vector3(0, 0, (_segments.Count * _segmentLength) - _currentDistance);
         _furthestDistance = centerPosition.z;
         center.transform.position = centerPosition;
-        
-        RandomSpawnObstacle(center, centerPosition);
 
-        // if (timeToSpawnObstacle())
-        // {
-        //     RandomSpawnObstacle(center, centerPosition);
-        // }
-        //
-        // if (timeToSpawnKebab())
-        // {
-        //     RandomSpawnKebab(center, centerPosition);
-        // }
+        if (_obstacleCounter > _nextObstaclePosition)
+        {
+            RandomSpawnObstacle(center, centerPosition);
+            _nextObstaclePosition = generateRandomNextObstaclePosition(_nextKebabPosition)
+            _obstacleCounter = 0;
+        }
+        else
+        {
+            _obstacleCounter++;
+        }
+        
+        if (_kebabCounter > _nextKebabPosition)
+        {
+            RandomSpawnKebab(center, centerPosition);
+            _nextKebabPosition = generateRandomNextKebabPosition(_nextObstaclePosition)
+            _kebabCounter = 0;
+        }
+        else
+        {
+            _kebabCounter++;
+        }
         
         _segments.Enqueue(center);
     }
+
+    private float generateRandomNextKebabPosition(float nextObstaclePosition)
+    {
+        float nextKebabPosition = Random.Range(_minDistanceBetweenKebabs, _maxDistanceBetweenKebabs);
+        if (nextKebabPosition == nextObstaclePosition)
+        {
+            nextKebabPosition += _minDistanceBetweenObstacleAndKebab;
+        }
+
+        return nextKebabPosition;
+    }
     
-    // private bool timeToSpawnObstacle()
-    // {
-    //     
-    // }
-    //
-    // private bool timeToSpawnKebab()
-    // {
-    //     
-    // }
+    private float generateRandomNextObstaclePosition(float nextKebabPosition)
+    {
+        float nextObstaclePosition = Random.Range(_minDistanceBetweenObstacles, _maxDistanceBetweenObstacles);
+        if (nextObstaclePosition == nextKebabPosition)
+        {
+            nextObstaclePosition += _minDistanceBetweenObstacleAndKebab;
+        }
+
+        return nextObstaclePosition;
+    }
 
     private void RandomSpawnKebab(GameObject center, Vector3 centerPosition)
     {
