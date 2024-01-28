@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7227149071382609927}
-  - component: {fileID: 8365424853574434016}
-  - component: {fileID: 5205991068981788313}
   - component: {fileID: 8365330214068301659}
   m_Layer: 0
   m_Name: Kebab
@@ -33,44 +31,8 @@ Transform:
   m_Children:
   - {fileID: 5909496476567956863}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8365424853574434016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3974478806605731396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9bfa1ed17eb1abdb3f7e4f140b871a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fin: {fileID: 0}
-  _interactionBounds: {fileID: 8365330214068301659}
---- !u!114 &5205991068981788313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3974478806605731396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1193a5f53e493f448455ae63192f431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionMask: 0
-  _onEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  _interactionBounds: {fileID: 8365330214068301659}
-  _onExited:
-    m_PersistentCalls:
-      m_Calls: []
-  _releaseInteractorsWhenTheyLeaveHandleArea: 0
-  _interactorsInside: []
 --- !u!114 &8365330214068301659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c55b1d468bde941afa5d666c31f52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0
+  _radius: 1
   _bounds:
     m_Center: {x: 0, y: 0.1, z: 0}
-    m_Extent: {x: 0.3, y: 0.25, z: 0.2}
+    m_Extent: {x: 0.6, y: 3.23, z: 0.5}
   _maxDistance: 0
   _zMultiplier: 0
   _boundType: 0
@@ -152,7 +114,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 420216b192d2c90339e46170b61e0555, type: 2}
+  - {fileID: 2100000, guid: a0de4e96d704cf147b14c1ac04429253, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

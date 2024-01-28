@@ -6,6 +6,8 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] 
+    private GameManager _gameManager;
+    [SerializeField] 
     private RoadGenerator _roadGenerator;
     [SerializeField] 
     private Transform _headTransform;
@@ -24,8 +26,6 @@ public class MovementController : MonoBehaviour
         _horizontalSpeed -= rightSpeed - leftSpeed;
         float radians = (_headTransform.rotation.eulerAngles.x / 180 * Mathf.PI);
         float verticalSpeed = -Mathf.Sin(radians);
-        Debug.Log("Unscaled speed " +speed);
-        _roadGenerator.AddSpeed(speed * 4f);
         Move(speed, _horizontalSpeed, verticalSpeed);
         _horizontalSpeed = Mathf.Lerp(_horizontalSpeed, 0, Time.deltaTime * 3f);
         _left.Reset();
@@ -34,10 +34,11 @@ public class MovementController : MonoBehaviour
 
     private void Move(float speed, float horizontalSpeed, float verticalSpeed)
     {
-        float x = (horizontalSpeed * Time.deltaTime) + transform.position.x;
+        float x = (horizontalSpeed * Time.deltaTime * 4f) + transform.position.x;
         x = Mathf.Clamp(x, _roadGenerator.MinX(), _roadGenerator.MaxX());
         float y = (verticalSpeed * (Mathf.Abs(_horizontalSpeed+speed))* Time.deltaTime) + transform.position.y;
-        y = Mathf.Clamp(y, 0.1f, 4f);
+        y = Mathf.Clamp(y, 0.1f, 4f * _gameManager._FedPercentage());
+        _roadGenerator.AddSpeed(speed * 7f);
         transform.position = new Vector3(x, y, 0);
     }
 }
