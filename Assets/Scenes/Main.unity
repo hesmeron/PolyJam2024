@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731707, g: 0.13414726, b: 0.12107857, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273233, g: 0.13415198, b: 0.12107962, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,6 +495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104076808}
   - component: {fileID: 2104076807}
+  - component: {fileID: 2104076809}
   m_Layer: 0
   m_Name: RoadGenerator
   m_TagString: Untagged
@@ -516,19 +517,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _roadPivot: {fileID: 906596341}
   _center: {fileID: 5589704320077504922, guid: e34122e7acdbf9cb4973aa4dbf208090, type: 3}
-  _obstacleHeight: 1
-  _obstacles:
-  - {fileID: 4650663384356968748, guid: 52d98f11bebe018c28bd76199e9206fa, type: 3}
+  _obstacleRandomizer: {fileID: 2104076809}
   _minDistanceBetweenObstacles: 4
   _maxDistanceBetweenObstacles: 10
-  _nextObstaclePosition: 0
   _obstacleCounter: 0
   _kebabHeight: 1
   _kebabs:
-  - {fileID: 6307666245395616220, guid: ad2f22e7eef1ee757b233388e51aa5e4, type: 3}
+  - {fileID: 3974478806605731396, guid: ad2f22e7eef1ee757b233388e51aa5e4, type: 3}
   _minDistanceBetweenKebabs: 6
   _maxDistanceBetweenKebabs: 15
-  _nextKebabPosition: 0
+  _kebabCounter: 0
   _minDistanceBetweenObstacleAndKebab: 2
   _segmentLength: 4
   _horizonDistance: 120
@@ -553,3 +551,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104076809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104076806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa8405303a84a3ba2c13aa7b039daf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacle1: {fileID: 4650663384356968748, guid: 52d98f11bebe018c28bd76199e9206fa, type: 3}
+  _obstacle2: {fileID: 8720983691782508863, guid: 2962b5f30076d4436b83585a0ff27984, type: 3}
