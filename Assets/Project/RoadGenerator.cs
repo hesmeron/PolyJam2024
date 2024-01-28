@@ -105,29 +105,9 @@ public class RoadGenerator : MonoBehaviour
         center.transform.position = centerPosition;
         
         RandomSpawnObstacle(center, centerPosition);
-
-        // if (timeToSpawnObstacle())
-        // {
-        //     RandomSpawnObstacle(center, centerPosition);
-        // }
-        //
-        // if (timeToSpawnKebab())
-        // {
-        //     RandomSpawnKebab(center, centerPosition);
-        // }
-        
+        RandomSpawnKebab(center, centerPosition);
         _segments.Enqueue(center);
     }
-    
-    // private bool timeToSpawnObstacle()
-    // {
-    //     
-    // }
-    //
-    // private bool timeToSpawnKebab()
-    // {
-    //     
-    // }
 
     private void RandomSpawnKebab(GameObject center, Vector3 centerPosition)
     {
